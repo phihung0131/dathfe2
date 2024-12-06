@@ -1,9 +1,8 @@
-name: Build and deploy Vite React static site to Azure Web App
+name: Build and Deploy Vite React to Azure
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,52 +10,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
 
-      - name: Install Dependencies
-        run: |
-          npm install
-          npm ci
+    - name: Install Dependencies
+      run: npm ci
 
-      - name: Build Project
-        run: |
-          npm run build || true
+    - name: Build Project
+      run: npm run build
 
-      - name: Create Web.config for SPA routing
-        run: |
-          mkdir -p dist
-          cp public/Web.config dist/Web.config
+    - name: Prepare Web Config
+      run: |
+        cp web.config dist/web.config
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: vite-react-build
-          path: dist
-          retention-days: 1
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vite-react-app
+        path: dist
+        retention-days: 1
 
   deploy:
-    runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: "Production"
+    runs-on: ubuntu-latest
+    environment: 
+      name: Production
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: vite-react-build
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: vite-react-app
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        id: deploy-to-webapp
-        with:
-          app-name: 'domstorefe'
-          slot-name: 'Production'
-          package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_07CB3E33FD534698971B57149F1DB5CB }}
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: 'domstorefe'
+        slot-name: 'Production'
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_07CB3E33FD534698971B57149F1DB5CB }}
