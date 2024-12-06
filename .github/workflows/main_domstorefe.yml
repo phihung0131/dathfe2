@@ -13,27 +13,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js version
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          npm install
-          npm ci
+        run: npm ci
 
       - name: Build
-        run: |
-          npm run build || true
-          mkdir -p dist  # Tạo thư mục dist nếu chưa tồn tại
-          cp public/Web.config dist/Web.config || true  # Thêm || true để bỏ qua lỗi nếu file không tồn tại
+        run: npm run build
 
-      - name: Upload artifact for deployment job
+      - name: Add Web.config
+        run: |
+          cp public/Web.config dist/Web.config
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: vite-react-build
-          path: dist # Thay đổi từ 'build' sang 'dist'
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,12 +43,12 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Download artifact from build job
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: vite-react-build
     
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
