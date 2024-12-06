@@ -25,9 +25,7 @@ jobs:
 
       - name: Build
         run: |
-          npm run build
-          # Nếu bạn cần copy Web.config, hãy điều chỉnh đường dẫn phù hợp với Vite
-          # Vite thường build ra thư mục 'dist' thay vì 'build'
+          npm run build -- --force          
           cp public/Web.config dist/Web.config
 
       - name: Upload artifact for deployment job
