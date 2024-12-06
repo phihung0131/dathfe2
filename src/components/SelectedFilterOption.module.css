@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #1b4ea0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    list-style: none;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+
+.filter-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cancel-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #1b4ea0;
+    margin-left: 3px;
+}

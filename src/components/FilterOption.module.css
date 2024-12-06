@@ -1,0 +1,77 @@
+.container
+{
+    margin-left: 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    min-width: 100px;
+    padding: 4px;
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.filter-title
+{
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.arrow-icon
+{
+    width: 1rem;
+    height: 1rem;
+}
+
+.arrow-icon.expand
+{
+    transform: rotate(180deg);
+}
+
+.filter-option-list
+{
+    top: calc(100% + 20px);
+    border: 1px solid rgb(210, 210, 210);
+    padding: 20px 10px;
+    cursor: auto;
+    left: 0;
+    min-width: 400px;
+    pointer-events: auto;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1000;
+    right: 0;
+    position: absolute;
+    height: 200px;
+    display: none;
+}
+
+.filter-option-list.active
+{
+    display: block;
+}
+
+.rating-container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rating-container li
+{
+    list-style: none;
+    background-color: rgb(244, 244, 244);
+    margin-right: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.rating-container li.selected
+{
+    background-color: rgb(247, 247, 0);
+}

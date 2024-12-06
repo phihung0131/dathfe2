@@ -1,0 +1,127 @@
+.container
+{
+    background-color: white;
+    border: 1px solid rgb(218, 218, 218);
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 8px 20px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.container:hover
+{
+    background-color: rgb(240, 240, 240);
+}
+
+
+.detail-button
+{
+    color: blue;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.detail-button:hover
+{
+    text-decoration: underline;
+}
+
+.product-title
+{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.price-container
+{
+    display: flex;
+}
+
+.price-container span:not(:first-child)
+{
+    margin-left: 10px;
+}
+
+.current-price
+{
+    font-weight: bold;
+}
+
+.strike-through
+{
+    text-decoration: line-through;
+    color: rgb(107 114 128);
+}
+
+.color-summary
+{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 6px;
+    align-items: center;
+    padding: 8px 20px;
+    box-shadow: 1px 1px 4px rgb(226, 226, 226);
+
+}
+
+.color-summary span
+{
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+.size-summary
+{
+    display: flex;
+    align-items: center;
+}
+
+.size-summary .size-icon
+{
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(234, 234, 234);
+    border-radius: 999px;
+    cursor: pointer;
+    display: grid;
+    white-space: nowrap;
+    place-items: center;
+    margin-right: 5px;
+}
+
+.size-summary .size-quantity
+{
+    max-width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0s;
+}
+
+.size-summary.active .size-icon
+{
+    background-color: yellow;
+}
+
+.size-summary.active .size-quantity
+{
+    max-width: 200px;
+    transition: 300ms;
+}
+
+.stat-container
+{
+    display: flex;
+    list-style: none;
+}
+
+.stat-container li:not(:first-child)
+{
+    margin-left: 20px;
+}
+
+

@@ -1,0 +1,32 @@
+.container {
+    padding: 30px 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.product-quantity-found-notify span {
+    font-weight: 500;
+}
+
+.search-notify {
+    align-self: flex-start;
+    font-style: italic;
+}
+
+.search-notify span {
+    font-weight: 500;
+}
+
+
+.product-flex-container {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}

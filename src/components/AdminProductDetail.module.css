@@ -1,0 +1,168 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 10% 0;
+}
+
+.container input,
+.container textarea,
+.container select {
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 1rem;
+}
+
+.container textarea {
+    min-height: 6rem;
+    max-height: 300px;
+}
+
+.container section
+{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-button
+{
+    color: gray;
+    cursor: pointer;
+    align-self: self-start;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.back-button:hover 
+{
+    text-decoration: underline;
+}
+
+.back-button:hover .back-icon 
+{
+    visibility: visible;
+    top: 50%;
+}
+
+.back-icon 
+{
+    width: 2rem;
+    height: 2rem;
+    visibility: hidden;
+    padding: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 99px;
+    position: absolute;
+    left: -2.5rem;
+    top: 100%;
+    transform: translateY(-50%);
+    transition: top 300ms;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.color-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-header .subsection-label {
+    margin-right: 20px;
+}
+
+.color-header .button {
+    background-color: rgb(0, 0, 158);
+    color: white;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-weight: bold;
+}
+
+.add-color-button {
+    padding: 6px 10px;
+    background-color: rgb(0, 0, 158);
+    color: white;
+    align-self: flex-start;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.subsection-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.child-label {
+    font-size: 1rem;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.size-list {
+    margin-bottom: 6px;
+    padding-left: 20px;
+}
+
+.size-list li {
+    margin-bottom: 4px;
+    display: flex;
+    padding: 6px 0;
+    align-items: center;
+}
+
+.size-list li label:nth-of-type(2) {
+    margin-left: 10px;
+}
+
+.option-container {
+    display: flex;
+    align-self: flex-end;
+}
+
+.save-change-button,
+.delete-product-button {
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.save-change-button {
+    background-color: rgb(0, 0, 156);
+    margin-right: 10px;
+}
+
+.delete-product-button {
+    background-color: red;
+}
+
+.confirm-button {
+    color: blue;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cancel-button {
+    color: gray;
+    font-weight: 500;
+}
+
+/* For AddProduct.jsx */
+.warning-message
+{
+    color: red;
+    margin-top: 5px;
+}

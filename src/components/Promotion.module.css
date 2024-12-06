@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    padding: 10px;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px rgba(227, 227, 227, 0.306);
+    position: relative;
+    transition: 300ms;
+}
+
+.container.disappear
+{
+    opacity: 0;
+}
+
+.left-part {
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    align-items: center;
+    
+}
+
+.left-part span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.divider {
+    width: 1px;
+    background-color: rgb(210, 210, 210);
+    margin: 0 10px;
+}
+
+.options-container
+{
+    display: flex;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.delete-button, .fix-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.delete-button {
+    color: rgb(218, 0, 0);
+}
+
+.fix-button
+{
+    margin-right: 5px;
+}
+
+.right-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-part div:nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.applied-date {
+    font-style: italic;
+    font-weight: 600;
+    color: rgb(82, 82, 82);
+}
+
+.product-name
+{
+    color: rgb(0, 0, 218);
+    font-weight: 500;
+}

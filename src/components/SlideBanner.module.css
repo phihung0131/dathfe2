@@ -1,0 +1,50 @@
+.container {
+    aspect-ratio: 16/9;
+    position: relative;
+}
+
+.banner-item {
+    height: 100%;
+    width: 100%;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.banner-item.active {
+    display: block;
+}
+
+.nav-container {
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-button {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 2px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.nav-button.active {
+    background-color: rgb(49, 49, 49);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}

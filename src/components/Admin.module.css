@@ -1,0 +1,15 @@
+.container.expand
+{
+    padding-left: 20vw;
+    transition: 500ms;
+    margin: 30px 5% 0;
+    padding-bottom: 50px;
+}
+
+.container
+{
+    padding-left: 100px;
+    transition: 500ms;
+    margin: 30px 5% 0;
+    padding-bottom: 50px;
+}

@@ -1,0 +1,114 @@
+.container {
+    width: 100%;
+    height: var(--header-height);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-button-container {
+    height: var(--header-height);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    position: relative;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.link {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: blue;
+}
+
+.link:active {
+    color: rgb(0, 0, 164);
+}
+
+.dropdown-menu-wrapper {
+    opacity: 0;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    background-color: white;
+    pointer-events: none;
+    transition: 150ms;
+}
+
+.nav-button-container:hover {
+    text-decoration: underline;
+}
+
+.nav-button-container:hover .dropdown-menu-wrapper {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.action-container {
+    align-items: center;
+    display: flex;
+}
+
+.action-button {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: grid;
+    border-radius: 999px;
+    cursor: pointer;
+    position: relative;
+    place-items: center;
+}
+
+.action-button:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.action-icon {
+    width: 1.2rem;
+    vertical-align: middle;
+    height: 1.2rem;
+}
+
+.user-drop-menu {
+    position: absolute;
+    top: 150%;
+    height: 0px;
+    right: 0;
+    user-select: none;
+    opacity: 0;
+    width: 250px;
+    transition: opacity 300ms, height 150ms;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 2px 2px 6px rgba(170, 170, 170, 0.494);
+}
+
+.user-drop-menu.visible {
+    opacity: 1;
+    transition: opacity 150ms, height 300ms;
+    height: 200px;
+}
+
+.user-drop-menu .item {
+    padding: 10px;
+    font-weight: 500;
+}
+
+.user-drop-menu .item:hover {
+    background-color: rgb(195, 218, 255);
+    color: blue;
+}

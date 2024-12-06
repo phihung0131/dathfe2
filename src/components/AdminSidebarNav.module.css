@@ -1,0 +1,129 @@
+.container {
+    width: 100px;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 20px;
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: 500ms;
+    background-color: #18283b;
+}
+
+.container.expand {
+    width: 20vw;
+}
+
+.container .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.container.expand .header {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 2rem;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.container.expand .header .toggle-icon {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    padding: 5px;
+    border-radius: 999px;
+    transform: rotate(0);
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.container .header .toggle-icon {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    transform: rotate(180deg);
+    padding: 5px;
+    border-radius: 999px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.container .header .toggle-icon:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav-item-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: 150ms;
+}
+
+.nav-item-container.selected
+{
+    background-color: #9C88FF;
+    color: black;
+}
+
+
+.nav-item-container .nav-icon {
+    fill: #fff;
+    width: 1.2rem;
+    pointer-events: none;
+    flex-shrink: 0;
+    height: 1.2rem;
+}
+
+.nav-item-container.selected .nav-icon {
+    fill: black;
+    width: 1.2rem;
+    pointer-events: none;
+    flex-shrink: 0;
+    height: 1.2rem;
+}
+
+.nav-item-container span {
+    color: inherit;
+    font-weight: 500;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+.nav-item-container:hover {
+    background-color: #9C88FF;
+}
+
+.nav-item-container:hover span,
+.nav-item-container:hover .nav-icon {
+    color: black;
+    fill: black;
+}
+
+.divider {
+    height: 0.5px;
+    background-color: #515a65;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

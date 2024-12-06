@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.nav-parent {
+    display: flex;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-parent-item {
+    list-style: none;
+    padding: 20px;
+    cursor: pointer;
+    margin-left: -1px;
+    background-color: white;
+    position: relative;
+    border: 1px solid rgb(243, 243, 243);
+}
+
+.nav-parent-item::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transition: 200ms;
+    bottom: 0; /* Adjust this value to move the underline down */
+    right: 50%;
+    height: 2px;
+    background-color: #0041C2; /* Set your desired color */
+}
+
+.nav-parent-item.active{
+    color: #0041C2;
+    font-weight: 600;
+}
+
+
+.nav-parent-item.active::after {
+    left: 0;
+    right: 0;
+}
+
+.nav-children {
+    display: flex;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgb(243, 243, 243);
+}
+
+.nav-children-item {
+    list-style: none;
+}
+

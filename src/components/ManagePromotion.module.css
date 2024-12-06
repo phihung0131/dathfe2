@@ -1,0 +1,35 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.container h2
+{
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.add-button
+{
+    padding: 10px 16px;
+    background-color: rgb(0, 0, 164);
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.add-button:hover
+{
+    background-color: rgb(0, 0, 140);
+}
+
+.add-button:active
+{
+    background-color: rgb(0, 0, 120);
+}
