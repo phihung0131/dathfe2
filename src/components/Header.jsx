@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import dropMenuStyles from "./DropdownMenu.module.css";
 import Logo from "../assets/logo.jsx";
-import { LuUserCircle2 } from "react-icons/lu";
+import { LuUserCircle2 } from "@vertisanpro/react-icons/lu";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 import DropdownMenu from "./DropdownMenu";
