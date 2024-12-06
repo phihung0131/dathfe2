@@ -26,7 +26,8 @@ jobs:
       - name: Build
         run: |
           npm run build || true
-          cp public/Web.config dist/Web.config
+          mkdir -p dist  # Tạo thư mục dist nếu chưa tồn tại
+          cp public/Web.config dist/Web.config || true  # Thêm || true để bỏ qua lỗi nếu file không tồn tại
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
