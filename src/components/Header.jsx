@@ -1,7 +1,6 @@
 import styles from "./Header.module.css";
 import dropMenuStyles from "./DropdownMenu.module.css";
 import Logo from "../assets/logo.jsx";
-import { LuUserCircle2 } from "@vertisanpro/react-icons/lu";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 import DropdownMenu from "./DropdownMenu";
@@ -102,7 +101,6 @@ const Header = () => {
                                     setUserMenuOpen((state) => !state);
                                 }}
                             >
-                                <LuUserCircle2 className={styles["action-icon"]} />
                                 <div className={`${styles["user-drop-menu"]} ${userMenuOpen ? styles["visible"] : ""}`}>
                                     <div className={styles["item"]} onClick={() => navigate("/profile")}>
                                         <span>Xem hồ sơ</span>
